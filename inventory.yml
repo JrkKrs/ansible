@@ -1,0 +1,7 @@
+---
+all:
+  children:
+    puppet_server:
+      hosts:
+        puppet:
+          ansible_host: 192.168.122.24

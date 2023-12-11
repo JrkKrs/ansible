@@ -1,0 +1,8 @@
+---
+- name: Install puppet server with foreman
+  hosts: puppet_server
+  become: true
+
+  roles:
+    - role: puppet-server
+    - role: foreman

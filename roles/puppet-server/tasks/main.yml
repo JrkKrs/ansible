@@ -1,0 +1,19 @@
+---
+# tasks file for puppet-server
+- name: Add repo for puppet
+  dnf:
+    name: https://yum.puppetlabs.com/puppet7-release-el-8.noarch.rpm
+    state: present
+- name: Install puppet server
+  dnf:
+    name: puppetserver
+    state: present
+- name: Enable puppet server
+  systemd:
+    name: puppetserver
+    enabled: yes
+- name: Start puppet server
+  systemd:
+    name: puppetserver
+    state: started
+
